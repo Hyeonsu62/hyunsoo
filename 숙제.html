@@ -21,30 +21,30 @@
 
   <script type="text/javascript">
     function order(){
-    let name = $('#name').val()
-    let count = $('#amount').val()
-    let address = $('#address').val()
-    let phone = $('#number').val() 
-    if (name == ''){
-      alert('이름을 입력해주세요')
-      $('#name').focus()
-      return
-    } else if (count == ''){
-      alert('수량을 입력해주세요')
-      $('#amount').focus()
-      return
-    }else if (address == ''){
-      alert('주소를 입력해주세요')
-      $('#address').focus()
-      return
-    }else if (phone == ''){
-      alert('휴대폰 번호를 입력해주세요')
-      $('number').focus()
-      return
-    }
+      let name = $('#name').val()
+      let count = $('#amount').val()
+      let address = $('#address').val()
+      let phone = $('#number').val() 
+      if (name == ''){
+        alert('이름을 입력해주세요')
+        $('#name').focus()
+        return
+      } else if (count == ''){
+        alert('수량을 입력해주세요')
+        $('#amount').focus()
+        return
+      }else if (address == ''){
+        alert('주소를 입력해주세요')
+        $('#address').focus()
+        return
+      }else if (phone == ''){
+        alert('휴대폰 번호를 입력해주세요')
+        $('number').focus()
+        return
+      }
 
-  
-  }
+
+    }
 
   </script>
 
@@ -139,7 +139,7 @@
       class="btn btn-primary">주문하기</button>
     </div>
   </div>
- <div class="order">
+  <div class="orders">
    <table class ="table table-striped">
     <thead>
       <tr>
@@ -148,11 +148,15 @@
         <th>주소</th>
         <th>전화번호</th>
       </tr>
-      <thead>
- </div>
+    </thead>
+    <tbody id="order-box">
+      <tr>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-
-
+</div>
 </form>
 </body>
 </html>
