@@ -3,7 +3,7 @@
 <head>
 
   <!-- Webpage Title -->
-  <title>tired</title>
+  <title>쇼핑몰</title>
 
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -18,6 +18,35 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+  <script type="text/javascript">
+    function order(){
+    let name = $('#name').val()
+    let count = $('#amount').val()
+    let address = $('#address').val()
+    let phone = $('#number').val() 
+    if (name == ''){
+      alert('이름을 입력해주세요')
+      $('#name').focus()
+      return
+    } else if (count == ''){
+      alert('수량을 입력해주세요')
+      $('#amount').focus()
+      return
+    }else if (address == ''){
+      alert('주소를 입력해주세요')
+      $('#address').focus()
+      return
+    }else if (phone == ''){
+      alert('휴대폰 번호를 입력해주세요')
+      $('number').focus()
+      return
+    }
+
+  
+  }
+
+  </script>
 
   <style type="text/css">
     *{
@@ -45,8 +74,15 @@
       width: 960px;
       height: 640px;
     }
+    .order {
+      text-align: center;
+    }
+    .orders {
+      margin-top: 100px;
+      text-align: center;
+    }
 
-    
+
 
   </style>
 
@@ -58,9 +94,9 @@
     <img class="card-img-top" src="https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-0/p640x640/80614002_2219799538321764_6792988011282825216_o.jpg?_nc_cat=111&_nc_ohc=EVwr5wGakJAAX8_3m1K&_nc_ht=scontent-lax3-2.xx&_nc_tp=1&oh=9c346cb4dedab3fc1e0c891568225e19&oe=5E9AF4D3" alt="Card image cap">
     <div class="card-body">
       <a class="card-title">청수사</a>
-      
+
       <a href="#"class="card-title1">가격:100,000,000/개</a>
-      
+
       <p class="card-text comment">미래의 천재적인 사진작가 박현수 포토그래퍼가 일본으로 여행을 가서 찍은 사진이다.</p>
     </div>
 
@@ -69,7 +105,8 @@
       <div class="form-group">
         <label for="name">주문자 성함:</label>
         <input type='text' class="form-control" 
-        id="name" placeholder="홍길동" >
+        id="name" aria-describedby="passwordHelpBlock" 
+        placeholder="홍길동" >
       </div>
 
 
@@ -85,23 +122,37 @@
      </div>
 
      <div class="form-group">
-      <label for="adress">주소</label>
+      <label for="address">주소</label>
       <input type="text" class="form-control" 
-      id="adress" placeholder="대한민국">
+      id="address" placeholder="대한민국">
     </div>
 
-    
+
     <div class="form-group">
       <label for="number">전화번호</label>
       <input type="text" class="form-control"
       id="number" placeholder="01012345678">
     </div>
-    <a class="btn btn-primary btn-lg" href="#" role="button">주문하기</a>
+    
+    <div class="order">
+      <button onclick="order()" type="button"
+      class="btn btn-primary">주문하기</button>
+    </div>
   </div>
+ <div class="order">
+   <table class ="table table-striped">
+    <thead>
+      <tr>
+        <th>이름</th>
+        <th>수량</th>
+        <th>주소</th>
+        <th>전화번호</th>
+      </tr>
+      <thead>
+ </div>
 </div>
 
 
 </form>
-
 </body>
 </html>
